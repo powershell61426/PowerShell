@@ -1,0 +1,1 @@
+﻿Measure-Command {1..5 | foreach {Invoke-Command -ComputerName PCName -Credential $cred -ScriptBlock{Get-Date}}} | Format-Table -AutoSize TotalSeconds
