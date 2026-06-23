@@ -15,9 +15,7 @@ $gatherInformation = {
                 Select-Object -First $procLimit
         }
 }
-$servers = Import-CSV $serverfile |
-    foreach{$_.Name}
-Invoke-Command -ThrottleLimit 10 -ComputerName PCName`
+Invoke-Command -ThrottleLimit 10 -ComputerName PCName `
                 -Credential $cred `
                 -ScriptBlock $gatherInformation `
                 -ArgumentList $numProcesses
